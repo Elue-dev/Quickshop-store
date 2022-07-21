@@ -1,0 +1,79 @@
+@import '../../globalStyles.scss';
+
+.form {
+    @include wrapper();
+    @include flexBox(center, center, column);
+    margin-bottom: 4rem;
+    h1 {
+        font-family: $headingFont;
+        padding-top: 3rem;
+    }
+    .update_desc {
+        @include wrapper();
+        width: 50%;
+        margin-bottom: 4rem;
+        font-weight: 500;
+        background: rgb(244, 244, 244);
+        max-width: 500px;
+        border-left: 3px solid $mainColor;
+        @include mQ(420px) {
+            width: 100%;
+        }
+        p {
+            padding: 1rem
+        }
+    }
+    .update_error {
+        color: #fff;
+        margin-bottom: 0.8rem;
+       
+    }
+    .alert {
+        @include mQ(420px) {
+            width: 100%;
+        }
+    }
+   label {
+        @include mQ(420px) {
+            width: 100%;
+        }
+        span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        input {
+            padding: .5rem;
+            width: 500px;
+            font-size: 1rem;
+            border: 0;
+            border-bottom: 1px solid #333;
+            &:hover, &:focus {
+                border-color: $mainColor;
+            }
+            @include mQ(420px) {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+   }
+    button {
+        width: 500px;
+        background: $mainColor;
+        color: #fff;
+        padding: .4rem .8rem;
+        border: 0;
+        outline: 0;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-top: .5rem;
+        cursor: pointer;
+        @include mQ(420px) {
+            width: 100%;
+        }
+    }
+    .link {
+        color: $mainColor;
+        margin-top: .5rem;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,176 @@
+@import '../../globalStyles.scss';
+
+.cart {
+   @include wrapper();
+   .cart_title {
+      font-family: $headingFont;
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+   }
+   .cart_empty {
+      text-align: center;
+      font-size: 1.4rem;
+      a {
+         color: #fff;
+         background: $mainColor;
+         padding: .4rem .8rem;
+         border-radius: .5rem;
+         outline: 0;
+         border: 0;
+         display: inline-block;
+         margin-top: 1.3rem;
+         font-weight: 600;
+      }
+      span {
+         color: $mainColor;
+      }
+      .basket_empty {
+         font-size: 10rem;
+         margin-bottom: 1rem
+      }
+    }
+    .cart_item {
+      @include flexBox(space-between, center, row);
+      padding: 1rem 5rem;
+      .item_image {
+         img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+         }
+      }
+      .count_input {
+         width: 50px;
+      }
+      .remove_item {
+         background: $mainColor;
+         color: #fff;
+         padding: .2rem .8rem;
+         border-radius: .3rem;
+         border: 0;
+         outline: 0;
+         font-weight: 700;
+         font-size: .8rem;
+         cursor: pointer;
+         .remove_icon {
+            font-size: 1.5rem;
+         }
+      }
+      .view_item {
+         font-size: 2rem;
+         cursor: pointer;
+      }
+    }
+    .clear_cart_row {
+      @include flexBox(space-between, center, row);
+      :first-child {
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .clear_cart {
+         background: $mainColor;
+         color: #fff;
+         padding: .5rem 1.5rem;
+         border-radius: .3rem;
+         border: 0;
+         outline: 0;
+         font-weight: 700;
+         font-size: 1.1rem;
+         cursor: pointer;
+         display: inline-block;
+         margin-top: 1rem;
+         text-align: right;
+       }
+    }
+    .summary {
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 2;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      .summary_title {
+         font-family: $headingFont;
+         color: $mainColor;
+      }
+      p {
+         font-size: 1.3rem;
+      }
+      .summary_icon {
+         color: $mainColor;
+         margin-right: .5rem;
+      }
+    }
+    .checkout_btn {
+      background: $mainColor;
+      color: #fff;
+      padding: .5rem 1.5rem;
+      border-radius: .3rem;
+      border: 0;
+      outline: 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+}
+
+// related styling
+
+.related_products {
+   padding-top: 6rem;
+   padding-bottom: 4rem;
+   @include wrapper();
+   .heading {
+       padding-bottom: 2rem
+   }
+   .related_data {
+       @include grid(repeat(4, 1fr));
+       gap: 1rem;
+       .related_grid {
+           position: relative;
+           .related_image {
+               position: relative;
+               &:after {
+                   position: absolute;
+                   content: '';
+                   top: 0;
+                   left: 0;
+                   height: 100%;
+                   width: 100%;
+                   background-color: #000;
+                   opacity: .6;
+               }
+               img {
+                   width: 100%;
+                   height: 250px;
+                   object-fit: cover;
+                   position: relative;
+               }
+           }
+           .related_texts {
+               position: absolute;
+               color: #fff;
+               top: 27%;
+               left: 3%;
+               line-height: 1.7;
+               font-weight: 700;
+               font-size: 1.2rem;
+               @include mQ(420px) {
+                  font-size: 1rem
+              }
+               @include flexBox(center, left, column);
+               :first-child {
+                   padding-bottom: 1rem;
+               }
+               :nth-child(2) {
+                   span {
+                       color: $mainColor;
+                   }
+               }
+           }
+       }
+   }
+}

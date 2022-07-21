@@ -1,0 +1,133 @@
+@import '../../globalStyles.scss';
+
+.signup {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    @include flexBox(center, center, column);
+    h1 {
+        font-family: $headingFont;
+        padding-bottom: 2rem;
+    }
+    .error {
+        @include flexBox(center, center, row);
+        gap: .3rem;
+        .error_icon {
+            font-size: 1.4rem;
+        }
+    }
+    .oAuth_signin {
+        .oAuth__signin {
+            background: rgb(226, 224, 224);
+            color: $mainColor;
+            padding: .4rem 1.3rem;
+            border-radius: .3rem;
+            border: 1px solid $mainColor;
+            outline: 0;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            width: 500px;
+            @include flexBox(center, center, row);
+            gap: .6rem;
+            margin-bottom: .4rem;
+            .google_icon {
+                font-size: 1.4rem;
+            }
+            .meta_icon {
+                font-size: 1.4rem;
+                color: #3388ff;
+            }
+        }
+        .google.dark, .facebook.dark {
+            color: $mainColor;
+        }
+    }
+    form {
+        padding-top: 1.5rem;
+        padding-bottom: 1.2rem;
+        font-size: 1.1rem;
+        label {
+            span {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+        }
+        input {
+            width: 500px;
+            padding: .7rem;
+            margin-bottom: 1.5rem;
+            border: 0;
+            border-bottom: 1px solid #333;
+            outline: 0;
+            font-size: 1.3rem;
+            border-radius: 0;
+            &:hover, &:focus {
+                border-color: $mainColor;
+            }
+        }
+        .eye {
+            font-size: 1.5rem;
+            color: $mainColor;
+            cursor: pointer;
+        }
+        .btn {
+            background: $mainColor;
+            color: #fff;
+            padding: .7rem 2rem;
+            border-radius: .3rem;
+            border: 0;
+            outline: 0;
+            font-weight: 700;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        li {
+            list-style: none;
+        }
+        .indicator {
+            background: rgb(244, 244, 244);
+            color: #333;
+            padding: .7rem;
+            margin-bottom: 1rem;
+            display: none;
+            transition: display .2s ease;
+            span {
+                color: #000;
+                font-weight: 700;
+            }
+        }
+    }
+    .forgot_password {
+        padding-bottom: 1rem;
+        a {
+            color: $mainColor;
+            text-decoration: underline;
+        }
+    }
+    .get_account {
+        span {
+            color: $mainColor;
+        }
+        a {
+            color: $mainColor;
+            text-decoration: underline;
+        }
+    }
+    .red {
+        color: red;
+        transition: .05s ease-in;
+    }
+    .green {
+        color: green;
+        transition: .05s ease-in;
+    }
+    .btn.disabled {
+        cursor: not-allowed;
+        opacity: 7;
+    }
+    .indicator.show {
+        display: block;
+    }
+}

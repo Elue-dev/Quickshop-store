@@ -1,0 +1,142 @@
+@import '../../globalStyles.scss';
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.navbar {
+    @include wrapper();
+    @include flexBox(space-between, center, row);
+    padding-top: 1.3rem;
+    padding-bottom: 1rem;
+    .logo {
+        font-weight: 500;
+        font-size: 1.5rem;
+        font-family: $headingFont;
+        span {
+            color: $mainColor;
+        }
+    }
+    .nav_links {
+        li {
+            list-style: none;
+            display: inline-block;
+            a, p {
+                margin-right: .7rem;
+                font-size: 1.3rem;
+                cursor: pointer;
+                .span_icon {
+                    margin-left: .2rem;
+                    color: $mainColor;
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+                .nav_icon {
+                    font-size: 1.5rem
+                }
+                .wishlist, .cart {
+                    font-size: 1.6rem;
+                    position: relative;
+                }
+            }
+            .mode_icon {
+                font-size: 1.7rem;
+                cursor: pointer;
+                margin-left: .5rem;
+            }
+        }
+        .count {
+            background: $mainColor;
+            color: #fff;
+            padding: .2rem;
+            border-radius: 50%;
+            position: relative;
+        }
+        .wishlist_count {
+            right: 108px;
+            top: -20px;
+        }
+        .user {
+            position: relative;
+        }
+        .close_popup {
+            position: absolute;
+            top: 0.2rem;
+            right: 0;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .user_auth {
+            position: absolute;
+            top: 5rem;
+            right: 9rem;
+            background: #fff;
+            max-height: 150px;
+            max-width: 100%;
+            transition: .5s ease-in-out;
+            box-shadow: 0 3px 8px rgba(0,0,0,.3);
+            .auth_links {
+                padding: 1rem 1rem;
+                display: none;
+                line-height: 2;
+                position: relative;
+                .user_modal {
+                    padding-top: 1rem;
+                    display: initial;
+                    .close_popup {
+                        position: absolute;
+                        top: 0.2rem;
+                        right: 0;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                    }
+                    .link_dashboard {
+                        font-weight: 700;
+                    }
+                }
+                a {
+                    color: $mainColor;
+                }
+                .logout {
+                    cursor: pointer;
+                    margin-top: -1rem;
+                    background: $mainColor;
+                    color: #fff;
+                    padding: 0.1rem 0.2rem;
+                    border-radius: 0.3rem;
+                    border: 0;
+                    outline: 0;
+                    font-weight: 700;
+                    text-align: center;
+                    margin-bottom: 1.5rem;
+                }
+            }
+            .auth_links.show {
+                display: block;
+            }
+        }
+    }
+}
+
+.nav.dark {
+    background: #111;
+    color: #fff;
+    .logo {
+        p {
+            color: #fff;
+        }
+    }
+    .username {
+        color: #333;
+    }
+}
+.navbar.dark {
+    color: #fff;
+    a {
+        color: #fff;
+    }
+}

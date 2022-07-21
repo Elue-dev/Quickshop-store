@@ -1,0 +1,175 @@
+@import "../../globalStyles.scss";
+
+.dashboard {
+  @include wrapper();
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @include mQ(380px) {
+    padding-bottom: 4rem;
+  }
+  h1 {
+    font-family: $headingFont;
+    padding: 2rem 0;
+    @include mQ(380px) {
+      padding-top: 1rem;
+    }
+  }
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+    background-color: $mainColor;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    @include mQ(420px) {
+        padding: 1rem;
+    }
+    h4 {
+      color: #fff;
+    }
+  }
+  .dashboard_header {
+    @include flexBox(left, center, row);
+    gap: 0.4rem;
+    @include mQ(420px) {
+      align-items: initial;
+      flex-direction: column;
+      padding-bottom: 2rem;
+    }
+    span {
+      color: $mainColor;
+    }
+    .dashboard_icon {
+      font-size: 3rem;
+      color: $mainColor;
+    }
+  }
+  .wishlist_details {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    p {
+      @include flexBox(left, center, row);
+      gap: 0.4rem;
+    }
+    .wishlist_count {
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      padding: 1rem;
+      transition: 1s ease;
+    }
+    .show {
+      display: block;
+    }
+    .dash_wish {
+      color: $mainColor;
+    }
+    .dash_icon {
+      color: $mainColor;
+      font-size: 1.2rem;
+    }
+    .dashboard_products {
+      margin-left: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: none;
+      transition: 1s ease;
+      li {
+        font-weight: 700;
+      }
+      .prod_details {
+        font-weight: 500;
+      }
+    }
+    .show {
+      display: block;
+    }
+  }
+  .cart_details {
+    .dash_icon {
+      color: $mainColor;
+      font-size: 1.5rem;
+    }
+    p {
+      @include flexBox(left, center, row);
+      gap: 0.4rem;
+    }
+    .dash_cart {
+      @include flexBox(left, center, row);
+      gap: 0.7rem;
+      color: $mainColor;
+    }
+    .cart_count {
+      margin-bottom: 0.5rem;
+      margin-left: 1rem;
+      display: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .show {
+      display: block;
+    }
+  }
+  .dashboard_products {
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 1rem;
+    li {
+      font-weight: 700;
+      padding-top: 1rem;
+    }
+    .prod_details {
+      font-weight: 500;
+    }
+    .dash_checkout {
+      padding-top: 1rem;
+      a {
+        color: $mainColor;
+      }
+      .question_icon {
+      }
+    }
+  }
+  .show {
+    display: block;
+  }
+  .dashboard_btn {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    outline: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    @include mQ(420px) {
+      padding: 0.3rem 0.8rem;
+      font-size: 1rem;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  .shop_btn {
+    background: $mainColor;
+    color: #fff;
+    border: 1.5px solid $mainColor;
+  }
+  .logout_btn {
+    border: 1.5px solid $mainColor;
+    background: #fff;
+    color: $mainColor;
+  }
+}

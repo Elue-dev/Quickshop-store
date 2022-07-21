@@ -1,0 +1,153 @@
+@import '../../globalStyles.scss';
+
+img {
+    height: 200px
+}
+
+.product_details {
+    @include wrapper();
+    padding-top: 3rem;
+    min-height: 80vh;
+    h1 {
+        font-family: $headingFont;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .desc_link {
+        padding-bottom: 2rem
+    }
+    .details_row {
+        @include grid(repeat(2, 1fr));
+        padding: 0 10rem;
+        .product_detail_container {
+            max-width: 400px;
+                .image_container {
+                    max-width: 400px;
+                    img {
+                        width: 100%;
+                        height: 450px;
+                        object-fit: cover
+                    }
+                }
+                .small_images_container {
+                    gap: .1rem;
+                    .small_image {
+                        height: 130px;
+                        width: 80px;
+                        object-fit: cover;
+                        cursor: pointer;
+                   }
+             }
+        }
+        .details_texts {
+            line-height: 3;
+            .detail_name {
+                color: $mainColor;
+                font-weight: 700;
+                font-size: 1.4rem;
+                padding-bottom: 1rem;
+            }
+            :nth-child(2) {
+                line-height: 1.8;
+            }
+            b {
+                color: $mainColor;
+            }
+            .detail_price {
+                color: $mainColor;
+                padding-top: 1rem;
+                :first-child {
+                    text-decoration: line-through;
+                    color: rgb(127, 124, 124);
+                    margin-right: .5rem;
+                }
+                :nth-child(2) {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                }
+            }
+            .btn {
+                border: 1px solid $mainColor;
+                outline: 0;
+                border-radius: .5rem;
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-top: 1.2rem;
+                cursor: pointer;
+            }
+            .add_to_cart {
+                border: 1.5px solid $mainColor;;
+                background: #fff;
+                color: $mainColor;
+                margin-right: .5rem;
+                padding: .5rem 1rem;
+            }
+            .buy_now {
+                background-color: $mainColor;
+                color: #fff;
+                padding: .5rem 1.3rem;
+            }
+            .disabled {
+                opacity: .3;
+                cursor: not-allowed;
+            }
+            .go_to_cart {
+                font-size: 1.2rem;
+                font-weight: 700;
+                .go_to_cart_icon {
+                    margin-left: .4rem;
+                }
+            }
+        }
+    }
+
+    // related styling
+
+    .related_products {
+        padding-top: 6rem;
+        .related_data {
+            @include grid(repeat(4, 1fr));
+            gap: 1rem;
+            .related_grid {
+                position: relative;
+                .related_image {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #000;
+                        opacity: .8;
+                    }
+                    img {
+                        width: 100%;
+                        height: 250px;
+                        object-fit: cover;
+                        position: relative;
+                    }
+                }
+                .related_texts {
+                    position: absolute;
+                    color: #fff;
+                    top: 27%;
+                    left: 3%;
+                    line-height: 1.7;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    @include flexBox(center, left, column);
+                    :first-child {
+                        padding-bottom: 1rem;
+                    }
+                    :nth-child(2) {
+                        span {
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

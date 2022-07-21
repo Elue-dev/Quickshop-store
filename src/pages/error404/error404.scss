@@ -1,0 +1,39 @@
+@import '../../globalStyles.scss';
+
+.error_page {
+    @include wrapper();
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    .error_top {
+        font-size: 4rem;
+    }
+    .error_desc {
+        font-size: 2rem;
+    }
+    .error_link {
+        font-family: 1.5rem;
+        a {
+            color: $mainColor;
+            span {
+                color: #333;
+            }
+        }
+    }
+    .error_icon {
+        
+        font-size: 7rem;
+    }
+}
+
+@include mQ(420px) {
+    .error_page {
+        top: 45%;
+    }
+    .error_page .error_top {
+        font-size: 3rem;
+    }
+    .error_page .error_desc {
+        font-size: 1.5rem;
+    }
+}

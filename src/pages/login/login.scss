@@ -1,0 +1,74 @@
+@import '../../globalStyles.scss';
+
+.login {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    @include flexBox(center, center, column);
+    h1 {
+        font-family: $headingFont;
+        padding-bottom: 2rem;
+    }
+    .error {
+        @include flexBox(center, space-between, row);
+        gap: .3rem;
+        .error_icon {
+            font-size: 1.4rem;
+        }
+    }
+    form {
+        line-height: 2;
+        padding-bottom: 1.5rem;
+        label {
+            span {
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+        input {
+            width: 500px;
+            padding: .7rem;
+            margin-bottom: 1.7rem;
+            border: 0;
+            border-bottom: 1px solid #333;
+            outline: 0;
+            font-size: 1.3rem;
+            &:hover, &:focus {
+                border-color: $mainColor;
+            }
+        }
+        .eye {
+            font-size: 1.5rem;
+            color: $mainColor;
+            cursor: pointer;
+        }
+        .btn {
+            background: $mainColor;
+            color: #fff;
+            padding: .7rem 2rem;
+            border-radius: .3rem;
+            border: 0;
+            outline: 0;
+            font-weight: 700;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 100%;
+        }
+    }
+    .forgot_password {
+        padding-bottom: 1rem;
+        a {
+            color: $mainColor;
+            text-decoration: underline;
+        }
+    }
+    .get_account {
+        span {
+            color: $mainColor;
+        }
+        a {
+            color: $mainColor;
+            text-decoration: underline;
+
+        }
+    }
+}

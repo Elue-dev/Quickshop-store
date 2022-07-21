@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Mukta:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Rubik+Moonrocks&display=swap"); */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+body,
+input {
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Mukta", sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  padding-top: 65px;
+  outline: 0;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.spinner {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+.details_spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+.related_spinner {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+.back {
+  color: #bb5353;
+  cursor: pointer;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* -----------dark mode styles------------ */
+
+.App.dark {
+  background: #222;
+}
+.App.dark h1,
+.App.dark p,
+.App.dark span,
+.App.dark div,
+.App.dark a,
+.App.dark .indicator span {
+  color: #f7f7f7;
+}
+.App.dark input {
+  background: #222;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+.App.dark .indicator {
+  background: rgb(57, 57, 57);
+}
+.App.dark p span {
+  color: #bb5353;
+}
+.App.dark .user_modal p {
+  color: #333;
+}
+.App.dark .reset_desc p,
+.App.dark .update_desc p {
+  color: #333;
+}
+.App.dark .search {
+  border: 0.4px solid #fff;
+}
+.App.dark .search:hover,
+.App.dark .search:focus {
+  border: 1px solid #bb5353;
+}
+.App.dark .det_back {
+  color: #bb5353;
+}
+.App.dark .home .products_details {
+  background: #222;
+  border: 0.4px solid #909090;
+}
+.App.dark .products_card {
+  width: -webkit-fill-available;
+}
+.App.dark .footer {
+  background: #111;
+}
+.App.dark .nav.dark .username p {
+  color: #333;
+}
+.App.dark .nav.dark .username .logout {
+  color: #fff;
+}
+.App.dark .dashboard .wishlist_details .wishlist_count {
+  border: 1px solid #333;
+}
+.App.dark .dashboard .cart_details .cart_count {
+  border: 1px solid #333;
+}

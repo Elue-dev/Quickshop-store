@@ -1,0 +1,107 @@
+@import '../../globalStyles.scss';
+
+.footer {
+    background: #222;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 4rem;
+    text-align: center;
+    .footer_container {
+        @include wrapper();
+        @include flexBox(space-around, center, row);
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        @include mQ(420px) {
+            flex-direction: column;
+        }
+        a {
+            color: #fff;
+        }
+        h2 {
+            font-family: $headingFont;
+            span {
+                color: $mainColor;
+            }
+        }
+        form {
+            font-family: $bodyFont;
+            .subscribe {
+                padding-bottom: .5rem;
+                font-size: 1.2rem;
+            }
+            .newsletter_error {
+                background: pink;
+                color: red;
+                border: 1px solid red;
+                padding: .2rem .6rem;
+                @include flexBox(center, center, row);
+                gap: .4rem;
+                margin: auto;
+                margin-bottom: .3rem;
+                width: 300px;
+            }
+            .newsletter_message {
+                background: rgb(183, 215, 136);
+                color: green;
+                border: 1px solid rgb(2, 69, 2);
+                padding: .2rem .6rem;
+                @include flexBox(center, center, row);
+                text-align: left;
+                gap: .4rem;
+                margin: auto;
+                margin-bottom: .3rem;
+                width: 300px;
+            }
+            .news_icon {
+                font-size: 1.3rem;
+            }
+            .news_icon_ {
+                font-size: 2rem;
+            }
+            input {
+                padding: .5rem;
+                width: 300px;
+                border-radius: 0;
+                border: 1px solid #333;
+            }
+            button {
+                display: block;
+                width: 300px;
+                padding: .4rem .8rem;
+                background: $mainColor;
+                color: #fff;
+                border: 0;
+                outline: 0;
+                font-size: 1rem;
+                font-weight: 700;
+                cursor: pointer;
+                margin: auto;
+            }
+        }
+        .copyright {
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .social_icons {
+            ul {
+                li {
+                    display: inline-block;
+                    margin-right: .5rem;
+                    list-style: none;
+                    font-size: 2rem;
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .line {
+        @include wrapper();
+    }
+}
+
+.footer.dark {
+    background: #111;
+}

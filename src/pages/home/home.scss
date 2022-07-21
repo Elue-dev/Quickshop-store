@@ -1,0 +1,177 @@
+@import '../../globalStyles.scss';
+
+.home {
+    .hero {
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        z-index: 1;
+        &::after {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #000;
+            opacity: .8;
+        }
+        .hero_text {
+            font-size: 1.8rem;
+            z-index: 100;
+            color: #f7f6f6;
+            position: absolute;
+            top: 30%;
+            right: 50%;
+            h2 {
+                .name {
+                    font-size: 3.5rem;
+                    span {
+                        color: $mainColor;
+    
+                    }
+                }
+            }
+        }
+    }
+
+    // products styling
+    .products_section {
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            i {
+                color: $mainColor
+            }
+            .sad_icon {
+                font-size: 1.5rem
+            }
+        }
+    }
+    input {
+        @include flexBox(center, center, column);
+        @include wrapper();
+        padding: .3rem .9rem;
+        width: 40%;
+        margin-bottom: 2rem;
+        text-align: center;
+        border: 2px solid #333;
+        outline: 0;
+        font-size: 1.1rem;
+        border-radius: .5rem;
+        &:focus {
+            border-color: $mainColor;
+        }
+    }
+    .search_filter {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1rem;
+        i {
+            font-weight: 700;
+            color: $mainColor;
+        }
+    }
+    .heading {
+        text-align: center;
+        font-family: $headingFont;
+    }
+    .products {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .products_data {
+        @include grid(repeat(3, 1fr));
+        place-items: center;
+        padding: 3rem 6rem;
+        row-gap: 3rem;
+        span {
+            text-align: center;
+        }
+    }
+    .products_details {
+        background-color: #fff;
+        width: 400px;
+        min-height: 500px;
+        border-radius: .7rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+        &:hover {
+            .product_image {
+                &::after {
+                    background: #000;
+                    opacity: .3;
+                }
+            }
+            .items_icon {
+                display: block;
+            }
+        }
+        .items_icon {
+            display: none;
+        }
+        .add_item_icon {
+            position: absolute;
+            top: 3rem;
+            right: 1rem;
+            font-size: 2rem;
+            padding: -3rem;
+            cursor: pointer;
+            z-index: 100;
+            color: #fff;
+        }
+        .details_icon {
+            position: absolute;
+            z-index: 100;
+            top: 6.2rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+        .product_image {
+            position: relative;
+            &:after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 300px;
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                border-bottom: 1px solid #777;
+            }
+    }
+    .product_texts {
+        padding: 1.5rem;
+        h2 {
+            font-size: 1.4rem;
+            color: $mainColor;
+            padding-bottom: .7rem;
+        }
+        :nth-child(2) {
+            padding-bottom: .7rem;
+        }
+    }
+}
+
+@include mQ(900px) {
+    .home .products_data {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .home .products_details {
+        width: auto;
+    }
+}
