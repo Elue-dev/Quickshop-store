@@ -7,6 +7,7 @@ import { MdBackspace } from "react-icons/md";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./productDetails.scss";
+import Loader from "../../components/loader/Loader";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -61,11 +62,7 @@ export default function ProductDetails() {
   };
 
   if (item.length === 0) {
-    return (
-      <div className="spinner details_spinner">
-        <BiLoader />
-      </div>
-    );
+    return <Loader />;
   }
 
   return (
@@ -78,11 +75,15 @@ export default function ProductDetails() {
           <Link to="/">Home</Link> / <span>Product detail</span>
         </p>
       </div>
-      <h1>Product Detail</h1>
       <div className="details_row">
         <div className="product_detail_container">
           <div className="image_container">
-            <img src={selectedImg} alt={item.name} id="large_img" style={{border: '2px solid grey'}} />
+            <img
+              src={selectedImg}
+              alt={item.name}
+              id="large_img"
+              style={{ border: "2px solid grey" }}
+            />
           </div>
 
           <div className="small_images_container">
@@ -93,7 +94,9 @@ export default function ProductDetails() {
                 alt={item.name}
                 className="small_image"
                 id="small_img"
-                style={{border: selectedImg === photo ? '2px solid grey' : ''}}
+                style={{
+                  border: selectedImg === photo ? "2px solid grey" : "",
+                }}
                 onClick={() => setSelectedImg(photo)}
               />
             ))}

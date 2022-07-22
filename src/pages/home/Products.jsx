@@ -7,6 +7,7 @@ import { BiLoader } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../../components/loader/Loader";
 
 export default function Products() {
   const {
@@ -45,9 +46,7 @@ export default function Products() {
 
   if (products.length === 0) {
     return (
-      <div className="spinner">
-        <BiLoader />
-      </div>
+      <Loader />
     );
   }
 

@@ -4,6 +4,7 @@ import AllRoutes from "./components/AllRoutes";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { ModeContext } from "./contexts/ModeContext";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const { mode } = useContext(ModeContext);
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className={`App ${mode}`}>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <AllRoutes />
         <Footer />
